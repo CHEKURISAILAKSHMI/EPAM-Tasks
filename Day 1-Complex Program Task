@@ -1,9 +1,13 @@
 abstract class Vehicle{
+  public String colour;
+  Vehicle(String colour){
+      this.colour=colour;
+  };
   abstract void displaymodel();
   abstract void displaywheels();
   abstract void displayspeed();
   protected static void accelerate(){
-      System.out.println("Accelerating Protectedly \n");
+      System.out.println("Accelerating Protectedly... \n");
   };
 }
 
@@ -12,20 +16,25 @@ class Bike extends Vehicle{
     private int wheels;
     private int speed;
     
-    Bike(String model,int wheels,int speed){
+    Bike(String model,int wheels,int speed,String colour){
+    super(colour);
         this.model=model;
         this.wheels=wheels;
         this.speed=speed;
+        
     }
   public void displaymodel(){
-    System.out.println("Colour of Vehicle is "+model);
+    System.out.println("Model of Vehicle is "+model);
   }
   public void displaywheels(){
     System.out.println("Wheels of a Vehicle are "+wheels);
   }
   public void displayspeed(){
     System.out.println("Speed of the Vehicle is "+speed);
-  }
+  
+    System.out.println("Colour of the Vehicle is.. "+colour);
+}
+ 
 }
 
 class Car extends Vehicle{
@@ -33,20 +42,24 @@ class Car extends Vehicle{
     private int wheels;
     private int speed;
     
-     Car(String model,int wheels,int speed){
+     Car(String model,int wheels,int speed,String colour){
+         super(colour);
         this.model=model;
         this.wheels=wheels;
         this.speed=speed;
+        
     }
   public void displaymodel(){
-    System.out.println("Colour of Vehicle is "+model);
+    System.out.println("Model of Vehicle is "+model);
   }
   public void displaywheels(){
     System.out.println("Wheels of a Vehicle are "+wheels);
   }
   public void displayspeed(){
     System.out.println("Speed of the Vehicle is "+speed);
-  }
+    System.out.println("Colour of the Vehicle is .."+colour);
+  
+}
 }
 
 
@@ -58,22 +71,11 @@ public class Program{
       b.accelerate();
     }
     public static void main(String args[]){
-      Vehicle b=new Bike("Unicorn",2,140);
-      Vehicle c=new Car("BMW",4,300);     
+      Vehicle b=new Bike("Unicorn",2,140,"Black");
+      Vehicle c=new Car("BMW",4,300,"White");     
        displayall(b);
        displayall(c);
     }
- }
- 
- 
- output :
- 
- Colour of Vehicle is Unicorn
-Wheels of a Vehicle are 2
-Speed of the Vehicle is 140
-Accelerating Protectedly 
-
-Colour of Vehicle is BMW
-Wheels of a Vehicle are 4
-Speed of the Vehicle is 300
-Accelerating Protectedly 
+    
+   
+}
