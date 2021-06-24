@@ -1,0 +1,79 @@
+abstract class Vehicle{
+  abstract void displaymodel();
+  abstract void displaywheels();
+  abstract void displayspeed();
+  protected static void accelerate(){
+      System.out.println("Accelerating Protectedly \n");
+  };
+}
+
+class Bike extends Vehicle{
+    private String model;
+    private int wheels;
+    private int speed;
+    
+    Bike(String model,int wheels,int speed){
+        this.model=model;
+        this.wheels=wheels;
+        this.speed=speed;
+    }
+  public void displaymodel(){
+    System.out.println("Colour of Vehicle is "+model);
+  }
+  public void displaywheels(){
+    System.out.println("Wheels of a Vehicle are "+wheels);
+  }
+  public void displayspeed(){
+    System.out.println("Speed of the Vehicle is "+speed);
+  }
+}
+
+class Car extends Vehicle{
+   private String model;
+    private int wheels;
+    private int speed;
+    
+     Car(String model,int wheels,int speed){
+        this.model=model;
+        this.wheels=wheels;
+        this.speed=speed;
+    }
+  public void displaymodel(){
+    System.out.println("Colour of Vehicle is "+model);
+  }
+  public void displaywheels(){
+    System.out.println("Wheels of a Vehicle are "+wheels);
+  }
+  public void displayspeed(){
+    System.out.println("Speed of the Vehicle is "+speed);
+  }
+}
+
+
+public class Program{
+     public  static void displayall(Vehicle b){
+      b.displaymodel();
+      b.displaywheels();
+      b.displayspeed();
+      b.accelerate();
+    }
+    public static void main(String args[]){
+      Vehicle b=new Bike("Unicorn",2,140);
+      Vehicle c=new Car("BMW",4,300);     
+       displayall(b);
+       displayall(c);
+    }
+ }
+ 
+ 
+ output :
+ 
+ Colour of Vehicle is Unicorn
+Wheels of a Vehicle are 2
+Speed of the Vehicle is 140
+Accelerating Protectedly 
+
+Colour of Vehicle is BMW
+Wheels of a Vehicle are 4
+Speed of the Vehicle is 300
+Accelerating Protectedly 
