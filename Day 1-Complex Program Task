@@ -79,3 +79,18 @@ public class Program{
     
    
 }
+
+
+output :
+
+Model of Vehicle is Unicorn
+Wheels of a Vehicle are 2
+Speed of the Vehicle is 140
+Colour of the Vehicle is.. Black
+Accelerating Protectedly... 
+
+Model of Vehicle is BMW
+Wheels of a Vehicle are 4
+Speed of the Vehicle is 300
+Colour of the Vehicle is ..White
+Accelerating Protectedly... 
